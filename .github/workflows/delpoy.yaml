@@ -57,7 +57,7 @@ jobs:
             
             - name: Run Python tests
               run: |
-                export PYTHONPATH = "." 
+                export PYTHONPATH="." 
                 pytest test/ -v --cov=scripts --cov-report=xml
 
             - name: Upload coverage report
