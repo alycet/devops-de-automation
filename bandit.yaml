@@ -1,0 +1,2 @@
+exclude_dirs: ['test']
+skips: ['B311']  #skip this since we are using random when generating sample ata
