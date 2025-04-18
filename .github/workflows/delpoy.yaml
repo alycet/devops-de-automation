@@ -78,7 +78,7 @@ jobs:
             - name: Setup Terraform
               uses: hashicorp/setup-terraform@v2
               with: 
-                terrafrom-version: ${{env.TF_VERSION}}
+                terraform-version: ${{env.TF_VERSION}}
 
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
@@ -106,7 +106,7 @@ jobs:
             - name: Setup Terraform
               uses: hashicorp/setup-terraform@v2
               with: 
-                terrafrom-version: ${{env.TF_VERSION}}
+                terraform-version: ${{env.TF_VERSION}}
 
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
@@ -143,7 +143,7 @@ jobs:
             - name: Setup Terraform
               uses: hashicorp/setup-terraform@v2
               with: 
-                terrafrom-version: ${{env.TF_VERSION}}
+                terraform-version: ${{env.TF_VERSION}}
 
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
