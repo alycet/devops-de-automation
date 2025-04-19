@@ -1,6 +1,7 @@
 import os
 import pytest
 import csv
+from datetime import datetime
 from scripts.generate_sample_data import generate_customer_csv
 
 @pytest.fixture
@@ -24,8 +25,8 @@ def test_generate_customer_csv_header(tmp_csv_file):
         reader = csv.reader(f)
         header = next(reader)
 
-        assert header == ["customer_id","first_name","last_name","email","street",
-                        "city","state","country"
+        assert header == ["timestamp","customer_id","first_name","last_name","email","street",
+                        "city","state"
                         ]
 
 def test_generate_customer_csv_content(tmp_csv_file):
@@ -41,8 +42,11 @@ def test_generate_customer_csv_content(tmp_csv_file):
 
         for row in rows:
             #test customer id
+            assert 1 <= int(row[1]) <= record_count
 
-            assert 1 <= int(row[0]) <= record_count
+            #test timestamp
+            timestamp = datetime.fromisoformat(row[0])
+            assert isinstance(timestamp, datetime)
 
 def test_generate_customer_csv_different_sizes(tmp_csv_file):
     sizes = [0,1,10,100]

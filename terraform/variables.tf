@@ -11,7 +11,7 @@ variable "project_name" {
 variable "use_existing_bucket" {
     description = "set to true to use an exisiting s3 bucket instead of creating a new one"
     type = bool
-    default = true
+    default = false
 }
 
 variable "existing_bucket_name" {
