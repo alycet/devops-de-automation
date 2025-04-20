@@ -25,7 +25,7 @@ Project Features:
 - **Automated Testing**: Ensures code quality using Python testing frameworks.
 - **Deployment**: Upon passing all checks, application is deployed to target environment.
 
---
+
 ## ⚙️ System Architecture
 ![Architecture Diagram]()
 
@@ -39,9 +39,8 @@ Project Features:
 - **Bandit**: Security vulnerability scanner for Python
 - **Pytest**: For running unit tests
 
----
 
-# 📦 Packages
+## 📦 Packages
 
 ## 🔄 Project Execution
 
