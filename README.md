@@ -1,12 +1,12 @@
 # DevOps Data Engineering Automation
 
 ## 📋 Table of Contents
-- [Introduction]()
-- [System Architecture]()
-- [About the Data]()
-- [Technologies Used]()
-- [Packages]()
-- [Project Execution Flow]()
+- [Introduction](https://github.com/alycet/devops-de-automation/tree/dev#-introduction)
+- [System Architecture](https://github.com/alycet/devops-de-automation/tree/dev#%EF%B8%8F-system-architecture)
+- [About the Data](https://github.com/alycet/devops-de-automation/tree/dev#-about-the-data)
+- [Technologies Used](https://github.com/alycet/devops-de-automation/tree/dev#-technologies-used)
+- [Packages](https://github.com/alycet/devops-de-automation/tree/dev#-packages)
+- [Project Execution](https://github.com/alycet/devops-de-automation/tree/dev#-project-execution)
 
 
 ## ⚡ Introduction
