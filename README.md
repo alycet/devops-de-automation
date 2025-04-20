@@ -12,21 +12,35 @@
 ## ⚡ Introduction
 
 **Automate everything. Break nothing.**  
-This project is a one-stop shop for spinning up cloud infrastructure and automating data workflows—*with zero manual intervention*. Designed for data engineers and DevOps pros, it combines **Terraform**, **GitHub Actions**, and **Python** to create an end-to-end automation pipeline that is secure, scalable, and fully testable.
+This project is a one-stop shop for spinning up cloud infrastructure and automating data workflows—*with zero manual intervention*. Designed for data engineers and DevOps pros, it combines **Terraform**, **GitHub Actions**, and **Python** to create an end-to-end automation pipeline that is secure, scalable, and fully testable. 
 
 Whether you're provisioning cloud resources or running data pipelines, this repo gives you the tools to do it right—every single time.
 
+Project Overview:
+- Sample customer data is generated using the Faker library.
+- Unit tests are run using pytest to validate data logic and structure.
+- Python code is scanned for security vulnerabilities using Bandit.
+- Terraform provisions the required AWS resources:
+    - S3 bucket to store customer data
+    - Uploads the generated CSV file as an S3 object
+    - IAM role with permissions for AWS Glue
+    - AWS Glue Crawler to detect schema from the data
+    - Glue Data Catalog to register the customer table
+- A table is created from the CSV and becomes queryable via Amazon Athena.
+- All steps are automated and triggered via GitHub Actions, enabling continuous integration and deployment.
+
 Project Features:
 
-- **Infrastructure Provisioning**: Provision and deployment of infrastructure including S3 bucket, IAM role, Glue Crawler, and Glue Catalog.
+- **Infrastructure Provisioning**: Provision and deployment of infrastructure.
 - **Data Generation**: Python-based scripts for generating sample customer data.
 - **Security Scanning**: Integrated with Bandit for static code analysis.
-- **Automated Testing**: Code and data quality testing using Pytest
+- **Automated Testing**: Code and data quality unit testing using Pytest.
 - **CI/CD Pipelines**: Building, testing, and deployment, automated with GitHub Actions.
 
 
 
 ## ⚙️ System Architecture
+Will add.
 ![Architecture Diagram]()
 
 ## 📊 About the Data
@@ -38,7 +52,7 @@ This script creates a synthetic dataset of customer records using the Faker libr
 - Email addresses
 - Street addresses, cities, and states
 
-By default, it generates 10,000 records and saves them to `data/customer_data.csv`, simulating a realistic dataset for testing ETL workflows.
+By default, it generates 10,000 records and saves them to `data/customer_data.csv`, simulating a realistic dataset.
 
 ## 🧩 Technologies Used
 
@@ -109,7 +123,7 @@ bandit -r . -c bandit.yaml
 ```
 
 ### Initialize Terraform
-This step sets up your Terraform environment, initializes required plugins, and shows a preview of infrastructure changes. After review, the apply command provisions the defined AWS resources.
+This step sets up your Terraform environment, initializes required plugins, and shows a preview of infrastructure changes. After review, the apply command provisions the defined AWS resources located in the `terraform/` directory. 
 ```bash
 cd terraform
 terraform init
@@ -128,10 +142,8 @@ on:
         branches: [dev, main]
 ```
 After the workflow is triggerd, the following steps are executed.
-- Linting
 - Security scanning
 - Testing
 - Terraform validation
 - Terraform planning
 - Deployment to production evnironment
-
