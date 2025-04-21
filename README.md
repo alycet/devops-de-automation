@@ -41,7 +41,7 @@ Project Features:
 
 ## ⚙️ System Architecture
 Will add.
-![Architecture Diagram]()
+![Architecture Diagram](https://github.com/alycet/devops-de-automation/blob/dev/CICD_Pipe_Architecture.png)
 
 ## 📊 About the Data
 This script creates a synthetic dataset of customer records using the Faker library. It generates a CSV file containing randomized customer data, including:
