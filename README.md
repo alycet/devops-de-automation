@@ -40,7 +40,6 @@ Project Features:
 
 
 ## ⚙️ System Architecture
-Will add.
 ![Architecture Diagram](https://github.com/alycet/devops-de-automation/blob/dev/CICD_Pipe_Architecture.png)
 
 ## 📊 About the Data
