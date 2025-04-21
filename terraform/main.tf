@@ -3,22 +3,6 @@ data "aws_s3_bucket" "existing" {
     bucket = var.existing_bucket_name
 }
 
-locals {
-    bucket_name = var.use_existing_bucket ? var.existing_bucket_name : "${var.project_name}-raw-data"
-}
-
-#resource "null_resource" "empty_s3_bucket" {
-#    triggers = {
-#        bucket_name = local.bucket_name
-#    }
-
-#    provisioner "local-exec" {
-#        command = "aws s3 rm s3://${local.bucket_name} --recursive"
-#    }
-
-#    depends_on = [aws_s3_bucket.raw_data]
-#}
-
 resource "aws_s3_bucket" "raw_data" {
     bucket = "${var.project_name}-raw-data"
     force_destroy = true
@@ -43,11 +27,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "raw_data" {
     }
 
 }
-
-#resource "aws_s3_object" "data_directory" {
-#    bucket = aws_s3_bucket.raw_data.id
-#    key = "data/"
-#}
 
 resource "aws_s3_object" "customer_data" {
     bucket = aws_s3_bucket.raw_data.id

@@ -6,17 +6,17 @@
 - [About the Data](https://github.com/alycet/devops-de-automation/tree/dev#-about-the-data)
 - [Technologies Used](https://github.com/alycet/devops-de-automation/tree/dev#-technologies-used)
 - [Packages](https://github.com/alycet/devops-de-automation/tree/dev#-packages)
-- [Project Execution](https://github.com/alycet/devops-de-automation/tree/dev#-project-execution)
+- [Getting Started](https://github.com/alycet/devops-de-automation/tree/dev#-project-execution)
 
 
 ## ⚡ Introduction
 
 **Automate everything. Break nothing.**  
-This project is a one-stop shop for spinning up cloud infrastructure and automating data workflows—*with zero manual intervention*. Designed for data engineers and DevOps pros, it combines **Terraform**, **GitHub Actions**, and **Python** to create an end-to-end automation pipeline that is secure, scalable, and fully testable. 
+This project is a one-stop shop for spinning up cloud infrastructure and automating data workflows. Designed for data engineers and DevOps pros, it combines **Terraform**, **GitHub Actions**, and **Python** to create an end-to-end automation pipeline that is secure, scalable, and fully testable. 
 
 Whether you're provisioning cloud resources or running data pipelines, this repo gives you the tools to do it right—every single time.
 
-Project Overview:
+Project Workflow Overview:
 - Sample customer data is generated using the Faker library.
 - Unit tests are run using pytest to validate data logic and structure.
 - Python code is scanned for security vulnerabilities using Bandit.
@@ -78,7 +78,7 @@ pytest-cov==4.1.0
 urllib3<2.0.0
 ```
 
-## 🔄 Project Execution
+## 🔄 Getting Started
 
 ### Prerequisites
 
@@ -130,6 +130,7 @@ terraform init
 terraform plan
 terraform apply
 ```
+Note: This terraform configuration located in the `provider.tf` file uses as s3 backend to store the state file. You will need to create an s3 bucket before running `terraform init` command.
 
 ### CI/CD Pipeline
 The Github Actions workflows are defined in the `.github/workflows/` diretory. 
