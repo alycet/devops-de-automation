@@ -142,9 +142,12 @@ on:
     push:
         branches: [dev, main]
 ```
-After the workflow is triggerd, the following steps are executed.
+
+After the workflow is triggerd, the following jobs are executed.
 - Security scanning
-- Testing
-- Terraform validation
-- Terraform planning
+- Unit Testing
+- Terraform Validation
+- Terraform Planning
 - Deployment to production evnironment
+
+Note: Pushes to dev branch will test workflow through planning job. Once pull request is submitted and code is pushed to main, the deployment job will run.
